@@ -1,0 +1,61 @@
+{% extends 'base/main.html' %}
+{% block content %}
+    <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My ToDo List</title>
+</head>
+<body>
+<div class="task">
+
+<div class="content">
+    <div class="header">{% if request.user.is_authenticated %}
+    <p>{{ request.user }}
+    <a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
+    </div>
+    <hr>
+<h1>To Do List</h1>
+                    <div class="inkpen"></div>
+
+<table>
+        <tr>
+            <th style="text-align: left; font-size: 45px; color: gray">Name </th>
+            <th><a href="{% url 'task-create' %}">Add Task</a>
+</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for task in tasks %}
+            {% if task.complete == True %}
+            <tr>
+            <td style="text-decoration: line-through;">{{ task.title }}</td>
+            <td><a href="{% url 'task' task.id %}">View</a></td>
+            <td><a href="{% url 'task-update' task.id %}">Update</a></td>
+            <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
+
+        </tr>
+            {% else %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td><a href="{% url 'task' task.id %}">View</a></td>
+            <td><a href="{% url 'task-update' task.id %}">Update</a></td>
+            <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
+
+        </tr>
+            {% endif %}
+        {% empty %}
+        <h3>No items in List</h3>
+        {% endfor %}
+</table>
+</div>
+</div>
+</body>
+</html>
+{% endblock content %}

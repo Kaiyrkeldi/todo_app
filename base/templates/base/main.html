@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Neonderthaw&family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+         background-image: url("http://bgfons.com/upload/wood%20_texture3177.jpg");
+         background-size: 100%;background-color: #fff;font-family: 'The Nautigal', cursive;
+            font-size: 40px;
+            padding-top: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: cadetblue;
+        }
+        .task{
+            position: relative;
+            max-width: 800px;
+            min-height: 1100px;
+            margin: auto;
+            background-image: {% load static %} url("{% static "base/media/output-onlinepngtools.png" %}");
+            background-size: 800px;
+            background-position-x: center;
+            background-repeat:no-repeat;
+        }
+
+        .content{
+            padding-top: 50px;
+            max-width: 600px;
+            margin: auto;
+        }
+        {#.inkpen {#}
+        {#    position: absolute;#}
+        {#    right: 0px;#}
+        {#    bottom:  80px;#}
+        {#    background-image: {% load static %} url("{% static "base/media/pngegg.png" %}");#}
+        {#    background-size: 250px;#}
+        {#    width: 250px;#}
+        {#    height: 445px;#}
+        {#}#}
+        .header{
+            text-align: right;
+        }
+        h1,td, h3{
+            text-align: center;
+        }
+        th{
+            min-width: 150px;
+        }
+        textarea{
+            height: 15px;
+        }
+        input[type="submit"]{
+            font-size: 32px;
+            font-family: 'The Nautigal', cursive;
+            background: transparent;
+            color: cadetblue;
+            border: none;
+        }
+        input[type="submit"]:active{
+            font-size: 35px;
+            font-family: 'The Nautigal', cursive;
+            background: transparent;
+            border: none;
+        }
+    </style>
+    <title>To Do App</title>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+
+        {% endblock content%}
+    </div>
+</body>
+</html>
