@@ -8,6 +8,7 @@ Clone the repository.
 git clone https://github.com/Kaiyrkeldi/todo_app.git
 cd todo_app 
 ~~~
+Provide details for your PostgreSQL database in assignment/settings.py file to DATABASES variable.
 
 ## Usage
 
